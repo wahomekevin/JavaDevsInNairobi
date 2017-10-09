@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.interview.nairobidevelopersearcherapp.R;
 import com.example.interview.nairobidevelopersearcherapp.UsersApp;
@@ -23,6 +25,9 @@ public class UsersActivity extends AppCompatActivity implements UsersView
 {
     @BindView(R.id.devsListRecyclerView)
     RecyclerView mUserListRecyclerView;
+
+    @BindView(R.id.loadUsersProgressBar)
+    ProgressBar mProgress;
 
     @Inject
     UserListAdapter mAdapter;
@@ -77,12 +82,12 @@ public class UsersActivity extends AppCompatActivity implements UsersView
 
     @Override
     public void showProgress() {
-
+        mProgress.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgress() {
-
+        mProgress.setVisibility(View.GONE);
     }
 
     @Override
@@ -92,6 +97,6 @@ public class UsersActivity extends AppCompatActivity implements UsersView
 
     @Override
     public void onLoadUsersError(String error) {
-
+        Toast.makeText(this, "Could not load from repository", Toast.LENGTH_SHORT).show();
     }
 }
