@@ -1,10 +1,10 @@
-package com.example.interview.nairobidevelopersearcherapp.models;
+package com.example.interview.nairobidevelopersearcherapp.entities;
 
 /**
  * Created by talihomz on 10/9/2017.
  */
 
-public class GitHubUser
+public class GithubUser
 {
     public String login;
     public String url;

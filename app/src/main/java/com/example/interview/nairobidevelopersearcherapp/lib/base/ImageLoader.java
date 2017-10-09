@@ -1,4 +1,4 @@
-package com.example.interview.nairobidevelopersearcherapp.libs.base;
+package com.example.interview.nairobidevelopersearcherapp.lib.base;
 
 import android.widget.ImageView;
 

@@ -1,6 +1,6 @@
-package com.example.interview.nairobidevelopersearcherapp.libs;
+package com.example.interview.nairobidevelopersearcherapp.domain.base;
 
-import com.example.interview.nairobidevelopersearcherapp.models.GithubUsersResponse;
+import com.example.interview.nairobidevelopersearcherapp.entities.GithubResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 public interface GithubService
 {
     @GET("users")
-    Call<GithubUsersResponse> listUsers(
+    Call<GithubResponse> listUsers(
             @Query("q") String query,
             @Query("page") int page,
             @Query("per_page") int resultsPerPage);
