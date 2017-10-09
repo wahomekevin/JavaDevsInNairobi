@@ -5,6 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.interview.nairobidevelopersearcherapp.MainActivity">
+    tools:context="com.example.interview.nairobidevelopersearcherapp.UsersActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/devsListRecyclerView"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:listitem="@layout/list_item" />
 
 </android.support.constraint.ConstraintLayout>
