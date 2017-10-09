@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NairobiDeveloperSearcherApp</string>
+    <string name="app_name">Java Devs in Nairobi</string>
     <string name="user_name">Github user name</string>
     <string name="user_url">Github user url</string>
 </resources>
