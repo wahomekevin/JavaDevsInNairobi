@@ -1,4 +1,4 @@
-#h1 Java Developers in Nairobi Example
+# Java Developers in Nairobi Example
 
-An simple app that displays a list of Java devs in Nai!
+An simple Android app that displays a list of Java developers in Nairobi!
 
