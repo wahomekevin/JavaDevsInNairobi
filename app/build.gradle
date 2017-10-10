@@ -22,9 +22,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
@@ -40,5 +37,9 @@ dependencies {
 
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.code.gson:gson:2.8.2'
-    testCompile 'junit:junit:4.12'
+
+    testCompile "org.robolectric:robolectric:$rootProject.ext.roboletricVersion"
+    testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+
 }

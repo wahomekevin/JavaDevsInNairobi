@@ -15,6 +15,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -36,4 +37,8 @@ ext {
     glideVersion = '3.6.1'
     eventBusVersion = '3.0.0'
     jsr250Version = '1.0'
+
+    roboletricVersion = '3.4.2'
+    mockitoVersion = '1.10.19'
+    junitVersion = '4.12'
 }

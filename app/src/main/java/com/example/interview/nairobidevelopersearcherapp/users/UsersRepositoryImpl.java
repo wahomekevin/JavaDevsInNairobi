@@ -13,12 +13,12 @@ import java.util.List;
  * Created by talihomz on 10/9/2017.
  */
 
-public class UserRepositoryImpl implements UserRepository {
+public class UsersRepositoryImpl implements UsersRepository {
 
     UsersLoader mUsersLoader;
     EventBus mEventBus;
 
-    public UserRepositoryImpl(UsersLoader usersLoader, EventBus eventBus)
+    public UsersRepositoryImpl(UsersLoader usersLoader, EventBus eventBus)
     {
         mUsersLoader = usersLoader;
         mEventBus = eventBus;

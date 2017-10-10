@@ -6,7 +6,7 @@ import com.example.interview.nairobidevelopersearcherapp.users.events.UserListEv
  * Created by talihomz on 10/9/2017.
  */
 
-public interface UserPresenter
+public interface UsersPresenter
 {
     void onCreate();
     void onDestroy();

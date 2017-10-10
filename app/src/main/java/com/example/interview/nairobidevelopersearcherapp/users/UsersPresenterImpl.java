@@ -10,13 +10,13 @@ import org.greenrobot.eventbus.Subscribe;
  * Created by talihomz on 10/9/2017.
  */
 
-public class UserPresenterImpl implements UserPresenter
+public class UsersPresenterImpl implements UsersPresenter
 {
     private UsersView mUsersView;
     private EventBus mEventBus;
-    private UserInteractor mInteractor;
+    private UsersInteractor mInteractor;
 
-    public UserPresenterImpl(EventBus eventBus, UsersView view, UserInteractor interactor)
+    public UsersPresenterImpl(EventBus eventBus, UsersView view, UsersInteractor interactor)
     {
         mEventBus = eventBus;
         mUsersView = view;
