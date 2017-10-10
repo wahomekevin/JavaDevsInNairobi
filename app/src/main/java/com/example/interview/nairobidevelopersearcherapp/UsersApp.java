@@ -16,17 +16,12 @@ import com.example.interview.nairobidevelopersearcherapp.users.ui.UsersView;
 
 public class UsersApp extends Application
 {
-    private DomainModule mDomainModule;
-    private LibModule mlibModule;
-    private UserListComponent mUserList;
-
     @Override
     public void onCreate() {
         super.onCreate();
     }
 
-    public UserListComponent getUserListComponent(Activity activity, UsersView view)
-    {
+    public UserListComponent getUserListComponent(Activity activity, UsersView view) {
         return DaggerUserListComponent
                 .builder()
                 .domainModule(new DomainModule())

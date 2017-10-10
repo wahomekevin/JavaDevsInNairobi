@@ -1,6 +1,6 @@
 package com.example.interview.nairobidevelopersearcherapp.users.di;
 
-import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubUsersLoader;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.UsersLoader;
 import com.example.interview.nairobidevelopersearcherapp.entities.GithubUser;
 import com.example.interview.nairobidevelopersearcherapp.lib.base.EventBus;
 import com.example.interview.nairobidevelopersearcherapp.lib.base.ImageLoader;
@@ -56,7 +56,7 @@ public class UserListModule {
 
     @Provides
     @Singleton
-    UserRepository providesUserRepository(GithubUsersLoader userLoader, EventBus eventBus){
+    UserRepository providesUserRepository(UsersLoader userLoader, EventBus eventBus){
         return new UserRepositoryImpl(userLoader, eventBus);
     }
 

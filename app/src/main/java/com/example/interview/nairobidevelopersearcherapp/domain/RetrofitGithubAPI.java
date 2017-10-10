@@ -1,4 +1,4 @@
-package com.example.interview.nairobidevelopersearcherapp.domain.base;
+package com.example.interview.nairobidevelopersearcherapp.domain;
 
 import com.example.interview.nairobidevelopersearcherapp.entities.GithubResponse;
 
@@ -10,7 +10,7 @@ import retrofit2.http.Query;
  * Created by talihomz on 10/9/2017.
  */
 
-public interface GithubService
+public interface RetrofitGithubAPI
 {
     @GET("users")
     Call<GithubResponse> listUsers(

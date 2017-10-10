@@ -39,9 +39,9 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.GitHub
     @Override
     public void onBindViewHolder(GitHubUserViewHolder holder, int position) {
         GithubUser user = mGitHubUsers.get(position);
-        holder.setUserId(user.login);
-        holder.setGithubUrl(user.url);
-        holder.setAvatar(user.avatar_url);
+        holder.setUserId(user.getLogin());
+        holder.setGithubUrl(user.getUrl());
+        holder.setAvatar(user.getAvatar_url());
     }
 
     public void swapList(List<GithubUser> users)

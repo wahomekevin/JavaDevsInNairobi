@@ -1,7 +1,7 @@
 package com.example.interview.nairobidevelopersearcherapp.users;
 
-import com.example.interview.nairobidevelopersearcherapp.domain.GithubNairobiJavaUsersListener;
-import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubUsersLoader;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.NairobiJavaUsersListener;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.UsersLoader;
 import com.example.interview.nairobidevelopersearcherapp.entities.GithubResponse;
 import com.example.interview.nairobidevelopersearcherapp.entities.GithubUser;
 import com.example.interview.nairobidevelopersearcherapp.lib.base.EventBus;
@@ -15,10 +15,10 @@ import java.util.List;
 
 public class UserRepositoryImpl implements UserRepository {
 
-    GithubUsersLoader mUsersLoader;
+    UsersLoader mUsersLoader;
     EventBus mEventBus;
 
-    public UserRepositoryImpl(GithubUsersLoader usersLoader, EventBus eventBus)
+    public UserRepositoryImpl(UsersLoader usersLoader, EventBus eventBus)
     {
         mUsersLoader = usersLoader;
         mEventBus = eventBus;
@@ -26,10 +26,10 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void load() {
-        mUsersLoader.loadNairobiJavaDevelopers(new GithubNairobiJavaUsersListener() {
+        mUsersLoader.loadNairobiJavaDevelopers(new NairobiJavaUsersListener() {
             @Override
             public void onUsersLoaded(GithubResponse response) {
-                post(response.items, null);
+                post(response.getItems(), null);
             }
 
             @Override

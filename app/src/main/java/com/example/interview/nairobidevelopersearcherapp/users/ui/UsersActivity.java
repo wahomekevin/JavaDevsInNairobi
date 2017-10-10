@@ -65,7 +65,6 @@ public class UsersActivity extends AppCompatActivity implements UsersView
 
     private void setupRecyclerView()
     {
-        mUserListRecyclerView = (RecyclerView) findViewById(R.id.devsListRecyclerView);
         mUserListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mUserListRecyclerView.setAdapter(mAdapter);
     }

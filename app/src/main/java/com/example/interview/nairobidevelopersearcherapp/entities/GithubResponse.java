@@ -8,5 +8,13 @@ import java.util.List;
 
 public class GithubResponse
 {
-    public List<GithubUser> items;
+    private List<GithubUser> items;
+
+    public List<GithubUser> getItems() {
+        return items;
+    }
+
+    public void setItems(List<GithubUser> items) {
+        this.items = items;
+    }
 }

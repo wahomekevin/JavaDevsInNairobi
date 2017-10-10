@@ -4,9 +4,9 @@ package com.example.interview.nairobidevelopersearcherapp.domain.di;
  * Created by talihomz on 10/9/2017.
  */
 
-import com.example.interview.nairobidevelopersearcherapp.domain.GithubNairobiJavaUsersLoader;
-import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubService;
-import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubUsersLoader;
+import com.example.interview.nairobidevelopersearcherapp.domain.RetrofitGithubAPI;
+import com.example.interview.nairobidevelopersearcherapp.domain.RetrofitNairobiJavaUsersLoader;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.UsersLoader;
 
 import javax.inject.Singleton;
 
@@ -22,9 +22,9 @@ public class DomainModule
 
     @Provides
     @Singleton
-    GithubService providesGithubService(Retrofit retrofit)
+    RetrofitGithubAPI providesGithubService(Retrofit retrofit)
     {
-        return retrofit.create(GithubService.class);
+        return retrofit.create(RetrofitGithubAPI.class);
     }
 
     @Provides
@@ -38,8 +38,8 @@ public class DomainModule
 
     @Provides
     @Singleton
-    GithubUsersLoader providesGithubLoader(GithubService service)
+    UsersLoader providesGithubLoader(RetrofitGithubAPI service)
     {
-        return new GithubNairobiJavaUsersLoader(service);
+        return new RetrofitNairobiJavaUsersLoader(service);
     }
 }

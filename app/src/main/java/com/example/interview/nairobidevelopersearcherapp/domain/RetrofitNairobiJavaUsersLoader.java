@@ -1,8 +1,8 @@
 package com.example.interview.nairobidevelopersearcherapp.domain;
 
-import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubService;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.NairobiJavaUsersListener;
 import com.example.interview.nairobidevelopersearcherapp.entities.GithubResponse;
-import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubUsersLoader;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.UsersLoader;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -12,22 +12,21 @@ import retrofit2.Response;
  * Created by talihomz on 10/9/2017.
  */
 
-public class GithubNairobiJavaUsersLoader implements GithubUsersLoader
+public class RetrofitNairobiJavaUsersLoader implements UsersLoader
 {
+    private RetrofitGithubAPI mService;
 
-    private GithubService mService;
-
-    public GithubNairobiJavaUsersLoader(GithubService service)
+    public RetrofitNairobiJavaUsersLoader(RetrofitGithubAPI service)
     {
         mService = service;
     }
 
     @Override
-    public void loadNairobiJavaDevelopers(final GithubNairobiJavaUsersListener listener)
+    public void loadNairobiJavaDevelopers(final NairobiJavaUsersListener listener)
     {
         String query = "location:Nairobi language:Java";
         int page = 1;
-        int resultsPerPage = 20;
+        int resultsPerPage = 100;
 
         Call<GithubResponse> call = mService.listUsers(query, page, resultsPerPage);
         call.enqueue(new Callback<GithubResponse>() {
@@ -44,4 +43,5 @@ public class GithubNairobiJavaUsersLoader implements GithubUsersLoader
             }
         });
     }
+
 }
