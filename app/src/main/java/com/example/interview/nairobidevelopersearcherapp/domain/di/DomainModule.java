@@ -5,8 +5,8 @@ package com.example.interview.nairobidevelopersearcherapp.domain.di;
  */
 
 import com.example.interview.nairobidevelopersearcherapp.domain.RetrofitGithubAPI;
-import com.example.interview.nairobidevelopersearcherapp.domain.RetrofitNairobiJavaUsersLoader;
-import com.example.interview.nairobidevelopersearcherapp.domain.base.UsersLoader;
+import com.example.interview.nairobidevelopersearcherapp.domain.RetrofitGithubService;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubService;
 
 import javax.inject.Singleton;
 
@@ -22,7 +22,7 @@ public class DomainModule
 
     @Provides
     @Singleton
-    RetrofitGithubAPI providesGithubService(Retrofit retrofit)
+    RetrofitGithubAPI providesApi(Retrofit retrofit)
     {
         return retrofit.create(RetrofitGithubAPI.class);
     }
@@ -31,15 +31,16 @@ public class DomainModule
     @Singleton
     Retrofit providesRetrofit() {
         return new Retrofit.Builder()
-                .baseUrl(GITHUB_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            .baseUrl(GITHUB_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
     }
+
 
     @Provides
     @Singleton
-    UsersLoader providesGithubLoader(RetrofitGithubAPI service)
+    GithubService providesGithubService(RetrofitGithubAPI api)
     {
-        return new RetrofitNairobiJavaUsersLoader(service);
+        return new RetrofitGithubService(api);
     }
 }

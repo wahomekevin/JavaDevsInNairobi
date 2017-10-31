@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.example.interview.nairobidevelopersearcherapp.R;
 import com.example.interview.nairobidevelopersearcherapp.UsersApp;
 import com.example.interview.nairobidevelopersearcherapp.entities.GithubUser;
-import com.example.interview.nairobidevelopersearcherapp.users.UserPresenter;
+import com.example.interview.nairobidevelopersearcherapp.users.UsersPresenter;
 import com.example.interview.nairobidevelopersearcherapp.users.adapters.UserListAdapter;
 
 import java.util.List;
@@ -33,7 +33,7 @@ public class UsersActivity extends AppCompatActivity implements UsersView
     UserListAdapter mAdapter;
 
     @Inject
-    UserPresenter mPresenter;
+    UsersPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

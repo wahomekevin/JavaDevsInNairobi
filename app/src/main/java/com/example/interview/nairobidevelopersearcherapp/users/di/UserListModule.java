@@ -1,15 +1,15 @@
 package com.example.interview.nairobidevelopersearcherapp.users.di;
 
-import com.example.interview.nairobidevelopersearcherapp.domain.base.UsersLoader;
+import com.example.interview.nairobidevelopersearcherapp.domain.base.GithubService;
 import com.example.interview.nairobidevelopersearcherapp.entities.GithubUser;
 import com.example.interview.nairobidevelopersearcherapp.lib.base.EventBus;
 import com.example.interview.nairobidevelopersearcherapp.lib.base.ImageLoader;
-import com.example.interview.nairobidevelopersearcherapp.users.UserInteractor;
-import com.example.interview.nairobidevelopersearcherapp.users.UserInteractorImpl;
-import com.example.interview.nairobidevelopersearcherapp.users.UserPresenter;
-import com.example.interview.nairobidevelopersearcherapp.users.UserPresenterImpl;
-import com.example.interview.nairobidevelopersearcherapp.users.UserRepository;
-import com.example.interview.nairobidevelopersearcherapp.users.UserRepositoryImpl;
+import com.example.interview.nairobidevelopersearcherapp.users.UsersInteractor;
+import com.example.interview.nairobidevelopersearcherapp.users.UsersInteractorImpl;
+import com.example.interview.nairobidevelopersearcherapp.users.UsersPresenter;
+import com.example.interview.nairobidevelopersearcherapp.users.UsersPresenterImpl;
+import com.example.interview.nairobidevelopersearcherapp.users.UsersRepository;
+import com.example.interview.nairobidevelopersearcherapp.users.UsersRepositoryImpl;
 import com.example.interview.nairobidevelopersearcherapp.users.adapters.UserListAdapter;
 import com.example.interview.nairobidevelopersearcherapp.users.ui.UsersView;
 
@@ -56,21 +56,21 @@ public class UserListModule {
 
     @Provides
     @Singleton
-    UserRepository providesUserRepository(UsersLoader userLoader, EventBus eventBus){
-        return new UserRepositoryImpl(userLoader, eventBus);
+    UsersRepository providesUserRepository(GithubService userLoader, EventBus eventBus){
+        return new UsersRepositoryImpl(userLoader, eventBus);
     }
 
     @Provides
     @Singleton
-    UserPresenter providesUsersPresenter(EventBus eventBus, UsersView view, UserInteractor interactor)
+    UsersPresenter providesUsersPresenter(EventBus eventBus, UsersView view, UsersInteractor interactor)
     {
-        return new UserPresenterImpl(eventBus, view, interactor);
+        return new UsersPresenterImpl(eventBus, view, interactor);
     }
 
     @Provides
     @Singleton
-    UserInteractor providesUserInteractor(UserRepository repository)
+    UsersInteractor providesUserInteractor(UsersRepository repository)
     {
-        return new UserInteractorImpl(repository);
+        return new UsersInteractorImpl(repository);
     }
 }
